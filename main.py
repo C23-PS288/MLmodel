@@ -11,9 +11,8 @@ def hello_world():
 
 
 @app.post('/predict')
-async def predict_image(file: UploadFile = File(...)):
-    contents = await file.read()
-    image = read_image(np.frombuffer(contents, np.uint8))
+async def predict_image(file: bytes = File(...)):
+    image = read_image(file)
     image = preprocess(image)
     prediction = predict(image)
 
