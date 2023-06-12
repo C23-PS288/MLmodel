@@ -1,4 +1,4 @@
 fastapi
 numpy
-tensorflow==2.8.0
+tensorflow
 uvicorn[standard]
