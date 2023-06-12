@@ -6,8 +6,6 @@ WORKDIR  /app
 # Copy every file in the source folder to the created working directory
 COPY  . .
 
-RUN apt-get update
-
 # Install the required packages
 RUN pip install -r requirements.txt
 
