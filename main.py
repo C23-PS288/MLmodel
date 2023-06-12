@@ -19,4 +19,4 @@ async def GetFoodName(imgpath: bytes = File(...)):
 
 if __name__ == "__main__":
     port = 8001
-    uvicorn.run("app:app", host="0.0.0.0",port=port, reload=True)
+    uvicorn.run(app, host="0.0.0.0",port=port)
