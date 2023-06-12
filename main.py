@@ -6,6 +6,9 @@ from models import load_image, preprocessing, predict_image
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "connection success"}
 
 @app.post('/predict')
 async def GetFoodName(imgpath: bytes = File(...)):
