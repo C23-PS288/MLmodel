@@ -7,7 +7,7 @@ model = keras.models.load_model('ModelML.h5', compile=False)
 model.compile(optimizer='adam',
               loss='categorical_crossentropy', metrics=['accuracy'])
 img_size = (224, 224)
-class_names = ['ayam_bakar', 'bakso', 'gado_gado', 'rendang', 'sate']
+class_names = ['sate', 'bakso', 'ayam_bakar', 'rendang', 'gado_gado']
 
 
 def load_image(uploaded_image):
