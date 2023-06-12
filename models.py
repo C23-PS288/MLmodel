@@ -1,4 +1,5 @@
 from tensorflow import keras
+from PIL import Image
 from io import BytesIO
 import numpy as np
 
@@ -11,14 +12,14 @@ class_names = ['ayam_bakar', 'bakso', 'gado_gado', 'rendang', 'sate']
 
 def load_image(uploaded_image):
     # Load and resize the image using Keras preprocessing
-    img = keras.preprocessing.image.load_img(
-        BytesIO(uploaded_image), target_size=img_size)
+    img = Image.open(BytesIO(uploaded_image))
+    img = img.resize(img_size)
     return img
 
 
 def preprocessing(img):
     # Convert the image to an array
-    img_array = keras.preprocessing.image.img_to_array(img)
+    img_array = np.array(img)
 
     # Reshape the array to match the input shape of the model
     img_array = np.expand_dims(img_array, axis=0)
