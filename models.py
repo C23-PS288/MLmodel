@@ -1,9 +1,6 @@
 from tensorflow import keras
 from io import BytesIO
 import numpy as np
-from fastapi import FastAPI, File
-from fastapi.responses import JSONResponse
-import uvicorn
 
 model = keras.models.load_model('ModelML.h5', compile=False)
 model.compile(optimizer='adam',

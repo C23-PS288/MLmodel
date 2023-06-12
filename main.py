@@ -1,4 +1,3 @@
-from tensorflow import keras as k
 from fastapi import FastAPI, File
 from fastapi.responses import JSONResponse
 import uvicorn
