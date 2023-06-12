@@ -15,7 +15,7 @@ ENV PYTHONUNBUFFERED=1
 
 ENV HOST 0.0.0.0
 
-EXPOSE 8081
+EXPOSE 9001
 
 # Run the python application
 CMD ["python", "main.py"]

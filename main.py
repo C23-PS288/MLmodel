@@ -17,5 +17,7 @@ async def GetFoodName(imgpath: bytes = File(...)):
     predicted_class_label = predict_image(img_array)
     return JSONResponse(content={"predicted_class_label": predicted_class_label})
 
+
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8081, reload=True)
+    port = 9001
+    uvicorn.run("app:app", host="0.0.0.0",port=port, reload=True)
